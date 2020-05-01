@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "899d7cc4-8f86-418b-87a6-b53bc6ce44f0",
+		"name": "Firebase TP3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "Get Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/be-tp3-a/us-central1/app/api/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"be-tp3-a",
+								"us-central1",
+								"app",
+								"api",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5001/be-tp3-a/us-central1/app/api/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 2,\n\t\"marca\": \"Ferrari\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/be-tp3-a/us-central1/app/api/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"be-tp3-a",
+								"us-central1",
+								"app",
+								"api",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5001/be-tp3-a/us-central1/app/api/delete/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/be-tp3-a/us-central1/app/api/delete/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"be-tp3-a",
+								"us-central1",
+								"app",
+								"api",
+								"delete",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5001/be-tp3-a/us-central1/app/api/update/2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\": \"Audi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/be-tp3-a/us-central1/app/api/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"be-tp3-a",
+								"us-central1",
+								"app",
+								"api",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Firebase Cloud Function",
+			"item": [
+				{
+					"name": "READ ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://us-central1-be-tp3-a.cloudfunctions.net/app/api/read",
+							"protocol": "https",
+							"host": [
+								"us-central1-be-tp3-a",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"app",
+								"api",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://us-central1-be-tp3-a.cloudfunctions.net/app/api/delete/0",
+							"protocol": "https",
+							"host": [
+								"us-central1-be-tp3-a",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"app",
+								"api",
+								"delete",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"MI_ID_CUSTOM\",\n\t\"marca\": \"FORD\",\n\t\"modelo\": \"Ranger XXX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-central1-be-tp3-a.cloudfunctions.net/app/api/create",
+							"protocol": "https",
+							"host": [
+								"us-central1-be-tp3-a",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"app",
+								"api",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"modelo\": \"Model SSS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-central1-be-tp3-a.cloudfunctions.net/app/api/update/123e4567-e89b-12d3-a456-426655445555",
+							"protocol": "https",
+							"host": [
+								"us-central1-be-tp3-a",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"app",
+								"api",
+								"update",
+								"123e4567-e89b-12d3-a456-426655445555"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://us-central1-be-tp3-a.cloudfunctions.net/app/api/read/123e4567-e89b-12d3-a456-426655445555",
+							"protocol": "https",
+							"host": [
+								"us-central1-be-tp3-a",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"app",
+								"api",
+								"read",
+								"123e4567-e89b-12d3-a456-426655445555"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
