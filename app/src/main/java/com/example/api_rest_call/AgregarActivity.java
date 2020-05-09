@@ -39,8 +39,9 @@ public class AgregarActivity extends AppCompatActivity {
         setTitle("Alta de Auto");
         final String marca;
         final String modelo;
-        marca = ((TextInputEditText) findViewById(R.id.marca_auto)).getText().toString();
-        modelo = ((TextInputEditText) findViewById(R.id.modelo_auto)).getText().toString();
+
+        //marca = ((TextInputEditText) findViewById(R.id.marca_auto)).getText().toString();
+       // modelo = ((TextInputEditText) findViewById(R.id.modelo_auto)).getText().toString();
 
         buttonGuardar = (Button) findViewById(R.id.buttonAgregar);
 
