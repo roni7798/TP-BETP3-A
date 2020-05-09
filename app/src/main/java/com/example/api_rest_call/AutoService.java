@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface AutoService {
 
@@ -19,6 +20,8 @@ public interface AutoService {
     @GET(API_ROUTE)
     Call<List<Auto>> getAutos();
 
-
+    String API_ROUTE_GET_ITEM= "app/api/read/{id}";
+    @GET(API_ROUTE_GET_ITEM)
+    Call<Auto> getAuto(@Path("id") String id);
 
 }

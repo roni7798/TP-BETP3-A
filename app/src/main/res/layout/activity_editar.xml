@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingTop="100dp"
+    android:paddingRight="30dp"
+    android:paddingBottom="50dp"
+    tools:context=".EditarActivity">
+
+    <TextView
+        android:id="@+id/id_auto"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/marca_auto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/modelo_auto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="462dp"
+        />
+
+</LinearLayout>
