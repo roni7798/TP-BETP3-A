@@ -3,4 +3,5 @@
     <string name="volver_atras">Ir hacia atrás</string>
     <string name="editar">Editar elemento</string>
     <string name="guardar">Guardar</string>
+    <string name="agregar">Agregar elemento</string>
 </resources>

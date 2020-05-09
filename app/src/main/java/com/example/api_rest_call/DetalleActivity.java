@@ -67,6 +67,7 @@ public class DetalleActivity extends AppCompatActivity {
             }
         });
 
+        /*
         final Button buttonEditar = findViewById(R.id.buttonEditar);
         buttonEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +81,7 @@ public class DetalleActivity extends AppCompatActivity {
             }
 
         });
-
+*/
         final Button buttonVolver = findViewById(R.id.buttonVolver);
         buttonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
