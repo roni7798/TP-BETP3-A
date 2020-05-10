@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import org.w3c.dom.Text;
 
 import java.util.List;
@@ -37,21 +39,21 @@ public class DetalleActivity extends AppCompatActivity {
                 .build();
 
         // Defnimos la interfaz para que utilice la base retrofit de mi aplicacion ()
-        AutoService autoService = retrofit.create(AutoService.class);
+        final AutoService autoService = retrofit.create(AutoService.class);
 
         Call<Auto> http_call = autoService.getAuto(id);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
             public void onResponse(Call<Auto> call, Response<Auto> response) {
-                Auto auto = response.body();
+                 Auto auto = response.body();
 
                 TextView idAuto = (TextView) findViewById(R.id.id_auto);
-                idAuto.setText("Id: "+auto.getId());
+                idAuto.setText(auto.getId());
                 TextView marca = (TextView) findViewById(R.id.marca_auto);
-                marca.setText("Marca: "+auto.getMarca());
+                marca.setText(auto.getMarca());
                 TextView modelo = (TextView) findViewById(R.id.modelo_auto);
-                modelo.setText("Modelo: "+auto.getModelo());
+                modelo.setText(auto.getModelo());
 
                 Toast.makeText(
                         DetalleActivity.this,
@@ -67,21 +69,42 @@ public class DetalleActivity extends AppCompatActivity {
             }
         });
 
-        /*
+
         final Button buttonEditar = findViewById(R.id.buttonEditar);
         buttonEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(getApplicationContext(), EditarActivity.class);
-                    startActivity(intent);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+                /*
+                TextView idAuto;
+                TextInputEditText marca;
+                TextInputEditText modelo;
+                idAuto= (TextView) findViewById(R.id.id_auto);
+                marca= (TextInputEditText) findViewById(R.id.marca_auto);
+                modelo = (TextInputEditText) findViewById(R.id.modelo_auto);
+                Log.i("DATOS", idAuto.getText().toString()+"-"+marca.getText().toString()+"-"+modelo.getText().toString());
+                 */
+
+                Call<Void> http_call = autoService.saveAuto(
+                        idAuto,
+                        marca,
+                        modelo
+                );
+
+                http_call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        Log.i("Ok","Actualizado correctamente");
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        Log.i("ERROR", t.getMessage());
+                    }
+                });
             }
 
         });
-*/
+
         final Button buttonVolver = findViewById(R.id.buttonVolver);
         buttonVolver.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -22,9 +23,14 @@ public interface AutoService {
     //Editar
     String API_ROUTE_SAVE_ITEM = "app/api/update/{id}";
     @PUT(API_ROUTE_SAVE_ITEM)
-    Call<Auto> saveAuto(@Path("id") String id);
+    Call<Void> saveAuto(
+            @Path("id") String id,
+            @Field("marca") String marca,
+            @Field("modelo") String modelo
+    );
     //Agregar
     String API_ROUTE_ADD_ITEM = "app/api/create";
+    @POST(API_ROUTE_ADD_ITEM)
     Call<Void> addAuto(@Body Auto auto);
     //Eliminar
 }
