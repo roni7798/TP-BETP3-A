@@ -32,7 +32,6 @@ public class DetalleActivity extends AppCompatActivity {
 
         final String id = b.getString("id");
 
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://us-central1-be-tp3-a.cloudfunctions.net/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -46,7 +45,7 @@ public class DetalleActivity extends AppCompatActivity {
         http_call.enqueue(new Callback<Auto>() {
             @Override
             public void onResponse(Call<Auto> call, Response<Auto> response) {
-                 Auto auto = response.body();
+                  Auto auto = response.body();
 
                 TextView idAuto = (TextView) findViewById(R.id.id_auto);
                 idAuto.setText(auto.getId());
@@ -74,26 +73,20 @@ public class DetalleActivity extends AppCompatActivity {
         buttonEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String idAuto;
-                String marca;
-                String modelo;
-                idAuto= (String) findViewById(R.id.id_auto).toString();
-                marca= (String) findViewById(R.id.marca_auto).toString();
-                modelo = (String) findViewById(R.id.modelo_auto).toString();
-                Log.i("DATOS", idAuto+"-"+marca+"-"+modelo);
-
-
+                String marca = ((TextInputEditText) findViewById(R.id.marca_auto)).getText().toString();
+                String modelo = ((TextInputEditText) findViewById(R.id.modelo_auto)).getText().toString();
                 Call<Void> http_call = autoService.saveAuto(
-                        idAuto,
+                        id,
                         marca,
                         modelo
                 );
-
+                Log.i("DATOS", id+"-"+marca+"-"+modelo);
                 http_call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         Log.i("Ok","Actualizado correctamente");
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
