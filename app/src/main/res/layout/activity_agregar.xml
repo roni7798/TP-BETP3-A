@@ -49,6 +49,7 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
         android:background="#33cc5a"
+        android:layout_margin="15dp"
         />
     <Button
         android:id="@+id/buttonVolver"
@@ -58,5 +59,6 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
         android:background="#00d2ff"
+        android:layout_margin="15dp"
         />
 </LinearLayout>

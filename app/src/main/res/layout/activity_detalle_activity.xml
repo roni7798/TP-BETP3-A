@@ -49,25 +49,6 @@
             android:layout_marginTop="40dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-<!--
-    <TextView
-        android:id="@+id/marca_auto"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif-black"
-        android:textSize="70px"
-        android:textAlignment="inherit"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <TextView
-        android:id="@+id/modelo_auto"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif-black"
-        android:textSize="70px"
-        android:textAlignment="inherit"
-        android:textColor="@color/colorPrimaryDark"/>
-    -->
 
     <Button
         android:id="@+id/buttonEditar"
@@ -77,6 +58,7 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
         android:background="#33cc5a"
+        android:layout_margin="15dp"
         />
 
     <Button
@@ -87,6 +69,7 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
         android:background="#ff0006"
+        android:layout_margin="15dp"
         />
 
     <Button
@@ -97,6 +80,7 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
         android:background="#00d2ff"
+        android:layout_margin="15dp"
         />
 
 
