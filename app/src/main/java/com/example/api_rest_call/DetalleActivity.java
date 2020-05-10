@@ -30,7 +30,7 @@ public class DetalleActivity extends AppCompatActivity {
         setTitle("Vehículo");
         Bundle b = getIntent().getExtras();
 
-        String id = b.getString("id");
+        final String id = b.getString("id");
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -38,7 +38,7 @@ public class DetalleActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        // Defnimos la interfaz para que utilice la base retrofit de mi aplicacion ()
+
         final AutoService autoService = retrofit.create(AutoService.class);
 
         Call<Auto> http_call = autoService.getAuto(id);
@@ -69,20 +69,20 @@ public class DetalleActivity extends AppCompatActivity {
             }
         });
 
-
+        //EDITAR
         final Button buttonEditar = findViewById(R.id.buttonEditar);
         buttonEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-                TextView idAuto;
-                TextInputEditText marca;
-                TextInputEditText modelo;
-                idAuto= (TextView) findViewById(R.id.id_auto);
-                marca= (TextInputEditText) findViewById(R.id.marca_auto);
-                modelo = (TextInputEditText) findViewById(R.id.modelo_auto);
-                Log.i("DATOS", idAuto.getText().toString()+"-"+marca.getText().toString()+"-"+modelo.getText().toString());
-                 */
+
+                String idAuto;
+                String marca;
+                String modelo;
+                idAuto= (String) findViewById(R.id.id_auto).toString();
+                marca= (String) findViewById(R.id.marca_auto).toString();
+                modelo = (String) findViewById(R.id.modelo_auto).toString();
+                Log.i("DATOS", idAuto+"-"+marca+"-"+modelo);
+
 
                 Call<Void> http_call = autoService.saveAuto(
                         idAuto,
@@ -97,13 +97,38 @@ public class DetalleActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        Log.i("ERROR", t.getMessage());
+                    public void onFailure(Call<Void> call, Throwable e) {
+                        Log.i("ERROR", e.getMessage());
                     }
                 });
             }
 
         });
+
+        //ELIMINAR
+        final Button buttonEliminar = findViewById(R.id.buttonEliminar);
+        buttonEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    Call<Void> http_call = autoService.deleteAuto(id);
+
+                    http_call.enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            Log.i("Eliminar", "Registro eliminado");
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+                            Log.i("RROR", t.getMessage());
+                        }
+            });
+            }
+        });
+
 
         final Button buttonVolver = findViewById(R.id.buttonVolver);
         buttonVolver.setOnClickListener(new View.OnClickListener() {

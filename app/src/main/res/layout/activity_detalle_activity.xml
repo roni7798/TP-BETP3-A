@@ -76,6 +76,17 @@
         android:text="@string/editar"
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
+        android:background="#33cc5a"
+        />
+
+    <Button
+        android:id="@+id/buttonEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="462dp"
+        android:background="#ff0006"
         />
 
     <Button
@@ -85,6 +96,7 @@
         android:text="@string/volver_atras"
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
+        android:background="#00d2ff"
         />
 
 

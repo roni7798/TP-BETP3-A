@@ -48,5 +48,15 @@
         android:text="@string/guardar"
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="462dp"
+        android:background="#33cc5a"
+        />
+    <Button
+        android:id="@+id/buttonVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volver_atras"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="462dp"
+        android:background="#00d2ff"
         />
 </LinearLayout>

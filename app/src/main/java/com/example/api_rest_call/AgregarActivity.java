@@ -73,39 +73,20 @@ public class AgregarActivity extends AppCompatActivity {
 
         });
 
-        /*
-        buttonGuardar.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view)  {
-                Auto auto = new Auto(marca, modelo);
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://us-central1-be-tp3-a.cloudfunctions.net/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                AutoService autoService = retrofit.create(AutoService.class);
-                Call<Void> http_call = autoService.addAuto(auto);
-
-                http_call.enqueue(new Callback<Void>() {
-
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        Toast.makeText(AgregarActivity.this, "Se ha dado de alta el auto correctamente", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                    }
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        Toast.makeText(AgregarActivity.this, "Hubo un error", Toast.LENGTH_LONG).show();
-                    }
-                });
-
-
+        final Button buttonVolver = findViewById(R.id.buttonVolver);
+        buttonVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
+
         });
-        */
+
     }
-
-
-
 
     }
